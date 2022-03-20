@@ -1,0 +1,367 @@
+mixed-port: 7890
+allow-lan: true
+# bind-address: "*"
+mode: rule
+log-level: info
+external-controller: :9090
+secret: ''
+ipv6: false
+#external-ui: folder
+
+# interface-name: 
+
+########################################### redir-host ###########################################
+hosts:
+#   '*.clash.dev': 127.0.0.1
+#   '.dev': 127.0.0.1
+#   'alpha.clash.dev': '::1'
+#   'eth.pool.minergate.com': 144.76.44.197
+#   'stormnetv2ray.herokuapp.com': 3.248.126.15
+#Auto.Js Pro
+
+
+############################################## DNS ##############################################
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5354
+  enhanced-mode: redir-host
+############################################ fake ip ############################################
+
+
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 162.159.36.5
+
+
+   
+
+  nameserver:
+
+
+    - tls://101.6.6.6:8853
+    - tls://120.53.53.53:853
+    - tls://1.12.12.12:853
+    - tls://223.5.5.5:853
+
+    - https://101.6.6.6:8443/dns-query
+    - https://120.53.53.53/dns-query
+    - https://1.12.12.12/dns-query
+    - https://223.5.5.5/dns-query
+
+  fallback: 
+
+
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+    - tls://9.9.9.10:853
+    - tls://149.112.112.10:853
+    - tls://94.140.14.141:853
+    - tls://94.140.14.140:853
+
+#UN-CN Dot NO 853
+    - tls://dns.cmrg.net:53053
+    - tls://dns.cmrg.net:443
+
+
+#Cloudflare Doh
+    - https://162.159.36.1/dns-query
+    - https://162.159.46.1/dns-query
+    - https://1.1.1.1/dns-query
+
+#Google Doh
+    - https://8.8.8.8/dns-query
+
+#IBM Doh
+    - https://9.9.9.10:5053/dns-query
+    - https://149.112.112.10:5053/dns-query
+    - https://9.9.9.10/dns-query
+    - https://149.112.112.10/dns-query
+
+#Adguard
+    - https://94.140.14.140/dns-query
+    - https://94.140.14.141/dns-query
+
+
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+     - 0.0.0.0/8
+     - 10.0.0.0/8
+     - 100.64.0.0/10
+     - 127.0.0.0/8
+     - 169.254.0.0/16
+     - 172.16.0.0/12
+     - 192.0.0.0/24
+     - 192.0.2.0/24
+     - 192.88.99.0/24
+     - 192.168.0.0/16
+     - 198.18.0.0/16
+     - 198.51.100.0/24
+     - 203.0.113.0/24
+     - 224.0.0.0/4
+     - 240.0.0.0/4
+     - 255.255.255.255/32
+     - ::1/128
+     - fc00::/7
+     - fe80::/10
+    domain:
+
+    #google
+      - 'www.gstatic.com'
+
+#      - '+.ampproject.org'
+#      - '+.appspot.com'
+#      - '+.blogger.com'
+#      - '+.google.com'
+#      - '+.google.cn'
+#      - '+.googleusercontent.com'
+#      - '+.ggpht.com'
+#      - '+.gmail.com'
+#      - '+.gvt0.com'
+#      - '+.gvt1.com'
+#      - '+.gvt2.com'
+#      - '+.gvt3.com'
+#      - '+.youtu.be'
+#      - '+.yt.be'
+#      - '+.ytimg.com'
+#      - '+.googlevideo.com'
+#      - '+.youtube.com'
+#      - '+.xn--ngstr-lra8j.com'
+#      - '+.xn--flw351e.com'
+#      - '+.xn--9kr7l.com'
+#      - '+.xn--ggle-55da.com'
+#      - '+.xn--gogl-0nd52e.com'
+#      - '+.xn--gogl-1nd42e.com'
+#Google 定位
+#      - '+.googleapis.com'
+#      - '+.googleapis.cn'
+#      - '+.gstatic.com'
+#      - '+.gstatic.cn'
+#      - '+.services.googleapis.cn'
+#      - '+.services.googleapis.com'
+#      - '+.connectivitycheck.gstatic.cn'
+#      - '+.connectivitycheck.gstatic.com'
+
+#  nameserver-policy:
+# Google Play 下载
+#    '+.services.googleapis.cn': '223.5.5.5'
+#    '+.xn--ngstr-lra8j.com': '223.5.5.5'
+
+
+
+
+
+proxy-providers:
+#  V2:
+#    type: http
+#    path: ./Proxy-Providers/V2.yaml
+#    url: https://api.dler.io/sub?target=clash&url=https://raw.githubusercontent.com/freefq/free/master/v2&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FLittleRey%2Fclash-yaml%2Fmain%2Ffreev2.ini&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true&upload=false&udp=true
+#    interval: 18000
+#    health-check:
+#      enable: true
+#      url: https://cp.cloudflare.com/generate_204
+#      interval: 300
+
+
+
+
+  Trojan:
+    type: http
+    path: ./Proxy-Providers/Trojan.yaml
+    url: https://api.wcc.best/sub?target=clash&url=https://github.com/ssrsub/ssr/raw/master/trojan&insert=false&rename=SSRSUB@Trojan`@@`-%E4%BB%98%E8%B4%B9%E6%8E%A8%E8%8D%90:@`/ssrsub@`dlj.tf@`&remove_emoji=false&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true&upload=false&udp=true
+    interval: 18000
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+
+  FreeV2:
+    type: http
+    path: ./Proxy-Providers/FreeV2.yaml
+    url: https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/freefq/free/master/v2&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FLittleRey%2Fclash-yaml%2Fmain%2Ffreev2.ini&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true&upload=false&udp=true
+    interval: 18000
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 300
+
+  Netease:
+    type: http
+    path: ./Proxy-Providers/Netease.yaml
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/eb883cde24fd1024bdd10c151ce28e50/raw/Netease.yaml
+    interval: 18000
+    health-check:
+      enable: true
+      url: http://music.163.com/generate_204
+      interval: 300
+
+proxy-groups:
+  - name: 国外代理
+    type: select
+    use:
+
+      - FreeV2
+      - Trojan
+    proxies:
+      - 延迟测试
+      - 故障转移
+      - DIRECT
+      - 负载均衡
+
+    
+  - name: 延迟测试
+    type: url-test
+    use:
+
+      - FreeV2
+      - Trojan
+    tolerance: 200
+    # lazy: true
+    url: http://cp.cloudflare.com/generate_204
+    interval: 900
+
+
+  - name: 负载均衡
+    type: load-balance
+    use:
+
+      - FreeV2
+      - Trojan
+    url: http://cp.cloudflare.com/generate_204
+    interval: 300
+    # disable-udp: true
+    strategy: consistent-hashing
+    # consistent-hashing 同域名同连接
+    # round-robin 随机连接
+
+  - name: 故障转移
+    type: fallback
+    use:
+
+      - FreeV2
+      - Trojan
+    url: http://cp.cloudflare.com/generate_204
+    interval: 300
+
+  - name: 远程桌面
+    type: select
+    use:
+
+      - FreeV2
+      - Trojan
+    proxies:
+      - 故障转移
+      - 延迟测试
+      - DIRECT
+      
+
+  - name: 游戏
+    type: select
+    use:
+
+      - FreeV2
+      - Trojan
+    proxies:
+      - DIRECT
+      - 国外代理
+      - 故障转移
+
+
+  - name: 网易云音乐
+    type: select
+    use:
+      - Netease
+    proxies:
+      - DIRECT
+ 
+  - name: 国内直连
+    type: select
+    use:
+
+      - FreeV2
+      - Trojan
+    proxies:
+      - DIRECT
+      - 国外代理
+
+
+
+rule-providers:
+  Local:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/Local.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/Local.list
+    interval: 18000
+
+  Proxy:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/Proxy.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/Proxy.list
+    interval: 18000
+
+
+  NeteaseMusic:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/NeteaseMusic.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/NeteaseMusic.list
+    interval: 18000
+
+
+  NeteaseMedia:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/NeteaseMedia.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/NeteaseMedia.list
+    interval: 18000
+
+  GeoIP-CN:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/GeoIP-CN.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/GeoIP-CN.list
+    interval: 18000
+
+  Direct:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/Direct.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/Direct.list
+    interval: 18000
+
+
+  Android-Game:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/Android-Game.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/Android-Game.list
+    interval: 18000
+
+
+  Remote-Deskop:
+    type: http
+    behavior: classical
+    path: ./Rule-Providers/Remote-Deskop.list
+    url: https://thingproxy.freeboard.io/fetch/https://gist.githubusercontent.com/LittleRey/2fc3a89115d2d24167bdc19a61523c77/raw/Remote-Deskop.list
+    interval: 18000
+
+
+
+rules:
+ - RULE-SET,Local,DIRECT
+ - RULE-SET,Direct,DIRECT
+ - RULE-SET,NeteaseMedia,国内直连
+ - RULE-SET,NeteaseMusic,网易云音乐
+ - RULE-SET,Proxy,国外代理
+ - RULE-SET,Remote-Deskop,远程桌面
+ - RULE-SET,Android-Game,游戏
+ - RULE-SET,GeoIP-CN,国内直连
+
+ - MATCH,国外代理
