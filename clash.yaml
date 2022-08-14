@@ -215,8 +215,8 @@ proxy-groups:
       - FreeV2
       - Trojan
     proxies:
-      - 延迟测试
       - 故障转移
+      - 延迟测试
       - DIRECT
       - 负载均衡
 
@@ -253,7 +253,7 @@ proxy-groups:
       - FreeV2
       - Trojan
     url: http://cp.cloudflare.com/generate_204
-    interval: 300
+    interval: 1500
 
   - name: 远程桌面
     type: select
