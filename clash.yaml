@@ -171,7 +171,7 @@ proxy-providers:
 #    interval: 18000
 #    health-check:
 #      enable: true
-#      url: https://cp.cloudflare.com/generate_204
+#      url: https://www.google.com/generate_204
 #      interval: 300
 
 
@@ -184,7 +184,7 @@ proxy-providers:
     interval: 18000
     health-check:
       enable: true
-      url: https://cp.cloudflare.com/generate_204
+      url: https://www.google.com/generate_204
       interval: 300
 
   FreeV2:
@@ -194,7 +194,7 @@ proxy-providers:
     interval: 18000
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: https://www.google.com/generate_204
       interval: 300
 
   Netease:
@@ -229,7 +229,7 @@ proxy-groups:
       - Trojan
     tolerance: 200
     # lazy: true
-    url: http://cp.cloudflare.com/generate_204
+    url: https://www.google.com/generate_204
     interval: 900
 
 
@@ -239,7 +239,7 @@ proxy-groups:
 
       - FreeV2
       - Trojan
-    url: http://cp.cloudflare.com/generate_204
+    url: https://www.google.com/generate_204
     interval: 300
     # disable-udp: true
     strategy: consistent-hashing
@@ -252,7 +252,7 @@ proxy-groups:
 
       - FreeV2
       - Trojan
-    url: http://cp.cloudflare.com/generate_204
+    url: https://www.google.com/generate_204
     interval: 1500
 
   - name: 远程桌面
