@@ -207,11 +207,23 @@ proxy-providers:
       url: http://music.163.com/generate_204
       interval: 300
 
+
+
+  Openit:
+    type: http
+    path: ./Proxy-Providers/Openit.yaml
+    url: https://api.wcc.best/sub?target=clash&url=https://github.com/yu-steven/openit/raw/main/Clash.yaml&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FLittleRey%2Fclash-yaml%2Fmain%2Femoji.ini&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true&upload=false&udp=true
+    interval: 18000
+    health-check:
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+
 proxy-groups:
   - name: 国外代理
     type: select
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     proxies:
@@ -224,7 +236,7 @@ proxy-groups:
   - name: 延迟测试
     type: url-test
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     tolerance: 200
@@ -236,7 +248,7 @@ proxy-groups:
   - name: 负载均衡
     type: load-balance
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     url: https://www.google.com/generate_204
@@ -249,7 +261,7 @@ proxy-groups:
   - name: 故障转移
     type: fallback
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     url: https://www.google.com/generate_204
@@ -258,7 +270,7 @@ proxy-groups:
   - name: 远程桌面
     type: select
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     proxies:
@@ -270,7 +282,7 @@ proxy-groups:
   - name: 游戏
     type: select
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     proxies:
@@ -289,7 +301,7 @@ proxy-groups:
   - name: 国内直连
     type: select
     use:
-
+      - Openit
       - FreeV2
       - Trojan
     proxies:
