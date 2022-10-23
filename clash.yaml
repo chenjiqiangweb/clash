@@ -241,7 +241,7 @@ proxy-groups:
       - Trojan
     tolerance: 200
     # lazy: true
-    url: https://www.google.com/generate_204
+    url: http://clients3.google.com/generate_204
     interval: 900
 
 
@@ -251,7 +251,7 @@ proxy-groups:
       - Openit
       - FreeV2
       - Trojan
-    url: https://www.google.com/generate_204
+    url: http://clients3.google.com/generate_204
     interval: 300
     # disable-udp: true
     strategy: consistent-hashing
@@ -264,7 +264,7 @@ proxy-groups:
       - Openit
       - FreeV2
       - Trojan
-    url: https://www.google.com/generate_204
+    url: http://clients3.google.com/generate_204
     interval: 1500
 
   - name: 远程桌面
